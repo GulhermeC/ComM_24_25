@@ -1,0 +1,55 @@
+name: spotify_clone
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.1+1
+
+environment:
+  sdk: ^3.1.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  font_awesome_flutter: ^10.7.0
+  carousel_slider: ^5.0.0
+  english_words: ^4.0.0
+  provider: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/enjoy.jfif
+    - assets/inna.jpg
+    - assets/kathadi.jpg
+    - assets/kathadi1.jpg
+    - assets/kolywood.jfif
+    - assets/lib.png
+    - assets/like.jfif
+    - assets/logo.png
+    - assets/logobl.png
+    - assets/mix.jfif
+    - assets/onrepeat.jfif
+    - assets/sach.jfif
+    - assets/satho.jfif
+    - assets/ser1.jfif
+    - assets/ser2.jfif
+    - assets/ser3.jfif
+    - assets/ser4.jfif
+    - assets/ser5.jfif
+    - assets/ser6.jfif
+    - assets/ser7.jfif
+    - assets/sobaby.jfif
+    - assets/stero.jfif
+    - assets/sulthan.jfif
+    - assets/top.jfif
+    - assets/weekly.jfif
+    - assets/zaalima.jfif
