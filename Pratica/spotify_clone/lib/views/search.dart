@@ -70,82 +70,98 @@ class SearchState extends State<Search> {
     );
   }
 
-  Row smalltile(BuildContext context,String text,final clrs,String text2,final clrs2,String imgurl1,String imgurl2) {
-    return Row(
-          children: [
-            Expanded(
-                child: Container(
-                  height: 85,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.only(top: 10,left: 25,right: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: clrs,
+  Row smalltile(BuildContext context, String text, final clrs, String text2, final clrs2, String imgurl1, String imgurl2) {
+  return Row(
+    children: [
+      Expanded(
+        child: Container(
+          height: 85,
+          margin: EdgeInsets.only(top: 10, left: 25, right: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2),
+            color: clrs,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8, right: 10, left: 8),
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    ),
+                    overflow: TextOverflow.ellipsis, // Prevent text overflow
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8,right: 10,left: 8),
-                        child: Text(text,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20
-                        ),),
-                      ),
-                      SizedBox(width: 4,),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Container(
-                          transform: Matrix4.identity()
-                            ..rotateZ(15 * 3.1415927 / -160),
-                          child: Image.asset(imgurl1,height: 60
-                            ,width: 75,),
-                        ),
-                      )
-                    ],
+                ),
+              ),
+              SizedBox(width: 4),
+              ClipRect( // Clip the image to prevent overflow
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Transform(
+                    transform: Matrix4.rotationZ(15 * 3.1415927 / -160), // Tilt the image
+                    child: Image.asset(
+                      imgurl1,
+                      height: 60,
+                      width: 75,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                )
-            ),
-            Expanded(
-                child: Container(
-                  height: 85,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.only(top: 10,left: 25,right: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: clrs2,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        child: Container(
+          height: 85,
+          margin: EdgeInsets.only(top: 10, left: 25, right: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2),
+            color: clrs2,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8, right: 10, left: 8),
+                  child: Text(
+                    text2,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    ),
+                    overflow: TextOverflow.ellipsis, // Prevent text overflow
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8,right: 10,left: 8),
-                        child: Text(text2,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20
-                          ),),
-                      ),
-                      SizedBox(width: 4,),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Container(
-                          transform: Matrix4.identity()
-                            ..rotateZ(15 * 3.1415927 / -160),
-                          child: Image.asset(imgurl2,height: 60
-                            ,width: 75,),
-                        ),
-                      )
-                    ],
+                ),
+              ),
+              SizedBox(width: 4),
+              ClipRect( // Clip the image to prevent overflow
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Transform(
+                    transform: Matrix4.rotationZ(15 * 3.1415927 / -160), // Tilt the image
+                    child: Image.asset(
+                      imgurl2,
+                      height: 60,
+                      width: 75,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                )
-            ),
-          ],
-        );
-  }
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
+
 }

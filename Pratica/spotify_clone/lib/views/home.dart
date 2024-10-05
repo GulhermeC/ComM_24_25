@@ -8,7 +8,6 @@ class HOOme extends StatefulWidget {
 }
 
 class HOOmeState extends State<HOOme> {
-
   List<Song> recs = [];
   List<Song> mads = [];
 
@@ -29,42 +28,65 @@ class HOOmeState extends State<HOOme> {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.green.shade900,
-                    Colors.black,
-                    Colors.black,
-                    Colors.black,
-                    Colors.black
-                  ]
-              )
-          ),
+                Colors.green.shade900,
+                Colors.black,
+                Colors.black,
+                Colors.black,
+                Colors.black
+              ])),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 children: [
-                  SizedBox(width: 10,),
-                  Text("Good Morning",style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                      fontWeight: FontWeight.w600
-                  ),),
-                  SizedBox(width: 85,),
-                  Icon(Icons.history,size: 35,color: Colors.white,),
-                  SizedBox(width: 20,),
-                  Icon(Icons.settings,size: 35,color: Colors.white,),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Flexible(
+                    child: Text(
+                      "Good Morning",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600),
+                      overflow:
+                          TextOverflow.ellipsis, // Ensure no overflow of text
+                    ),
+                  ),
+                  SizedBox(
+                    width: 85,
+                  ),
+                  Icon(
+                    Icons.history,
+                    size: 35,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Icon(
+                    Icons.settings,
+                    size: 35,
+                    color: Colors.white,
+                  ),
                 ],
               ),
-              SizedBox(height: 5,),
-              Container
-                (
+              SizedBox(
+                height: 5,
+              ),
+              Container(
                 height: 300,
                 color: Colors.transparent,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -72,24 +94,50 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white30,
+                              decoration: BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Rounded corners added here
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    color: Colors.purple[500],
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/6,
-                                    child: Icon(Icons.favorite,color: Colors.white70,size: 35,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded corners for the left side of the image
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      color: Colors.purple[500],
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Icon(
+                                        Icons.favorite,
+                                        color: Colors.white70,
+                                        size: 35,
+                                      ),
+                                    ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
-                                    child: Text("Liked Songs",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400
-                                      ),),
+                                  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Text(
+                                        "Liked Songs",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400),
+                                        overflow: TextOverflow
+                                            .ellipsis, // Avoid overflow text
+                                      ),
+                                    ),
                                   )
                                 ],
                               ),
@@ -98,24 +146,49 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white30,
+                              decoration: BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Only round the left side
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/5,
-                                    child: Image.asset("assets/kathadi.jpg",fit: BoxFit.fill,height: 100,width: 100,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded top left corner for image
+                                      bottomLeft: Radius.circular(
+                                          15), // Rounded bottom left corner for image
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Image.asset(
+                                        "assets/kathadi.jpg",
+                                        fit: BoxFit.fill,
+                                        height: 100,
+                                        width: 100,
+                                      ),
+                                    ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
-                                    child: Text("Kaathadi",
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text(
+                                      "Kaathadi",
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400
-                                      ),),
-                                  )
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -130,36 +203,70 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white30,
+                              decoration: BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Only round the left side
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/5,
-                                    child: Image.asset("assets/kolywood.jfif",fit: BoxFit.fill,height: 100,width: 100,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded top left corner for image
+                                      bottomLeft: Radius.circular(
+                                          15), // Rounded bottom left corner for image
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: MediaQuery.of(context)
+                                          .size
+                                          .height, // Keep the height consistent
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Image.asset(
+                                        "assets/kolywood.jfif",
+                                        fit: BoxFit.fill,
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                10, // Adjust as needed
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                      ),
+                                    ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
+                                    padding: const EdgeInsets.only(left: 8.0),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text("Kolywood",
+                                        Text(
+                                          "Kolywood",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),),
-                                        Text("cream",
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        Text(
+                                          "cream",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),)
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -167,36 +274,71 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white30,
+                              decoration: BoxDecoration(
+                                color: Colors.white30,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Only round the left side
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/5,
-                                    child: Image.asset("assets/enjoy.jfif",fit: BoxFit.fill,height: 100,width: 100,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded top left corner for image
+                                      bottomLeft: Radius.circular(
+                                          15), // Rounded bottom left corner for image
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: MediaQuery.of(context)
+                                          .size
+                                          .height, // Keep the height consistent
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Image.asset(
+                                        "assets/enjoy.jfif",
+                                        fit: BoxFit.fill,
+                                        height: MediaQuery.of(context)
+                                                .size
+                                                .height /
+                                            10, // Adjusted height for consistency
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                      ),
+                                    ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
+                                    padding: const EdgeInsets.only(left: 8.0),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text("Enjoy",
+                                        Text(
+                                          "Enjoy",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),),
-                                        Text("Enjami",
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        Text(
+                                          "Enjami",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),)
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -211,36 +353,71 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white38,
+                              decoration: BoxDecoration(
+                                color: Colors.white38,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Only round the left side
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/5,
-                                    child: Image.asset("assets/inna.jpg",fit: BoxFit.fill,height: 100,width: 100,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded top left corner for image
+                                      bottomLeft: Radius.circular(
+                                          15), // Rounded bottom left corner for image
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: MediaQuery.of(context)
+                                          .size
+                                          .height, // Keep the height consistent
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Image.asset(
+                                        "assets/inna.jpg",
+                                        fit: BoxFit.fill,
+                                        height: MediaQuery.of(context)
+                                                .size
+                                                .height /
+                                            10, // Adjusted height for consistency
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                      ),
+                                    ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
+                                    padding: const EdgeInsets.only(left: 8.0),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text("Lift",
+                                        Text(
+                                          "Lift",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),),
-                                        Text("Song",
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        Text(
+                                          "Song",
                                           style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w400
-                                          ),)
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -248,37 +425,76 @@ class HOOmeState extends State<HOOme> {
                           Expanded(
                             child: Container(
                               margin: EdgeInsets.all(10),
-                              color: Colors.white38,
+                              decoration: BoxDecoration(
+                                color: Colors.white38,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(
+                                      15), // Rounded top left corner
+                                  bottomLeft: Radius.circular(
+                                      15), // Rounded bottom left corner
+                                ), // Only round the left side
+                              ),
                               child: Row(
                                 children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    height: MediaQuery.of(context).size.height,
-                                    width: MediaQuery.of(context).size.width/5,
-                                    child: Image.asset("assets/sach.jfif",fit: BoxFit.fill,height: 100,width: 100,),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(
+                                          15), // Rounded top left corner for image
+                                      bottomLeft: Radius.circular(
+                                          15), // Rounded bottom left corner for image
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: MediaQuery.of(context)
+                                          .size
+                                          .height, // Keep the height consistent
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      child: Image.asset(
+                                        "assets/sach.jfif",
+                                        fit: BoxFit.fill,
+                                        height: MediaQuery.of(context)
+                                                .size
+                                                .height /
+                                            10, // Adjusted height for consistency
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                6,
+                                      ),
+                                    ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left:8.0),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text("Sachin - A",
-                                          style: TextStyle(
+                                  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Sachin - A",
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 16,
-                                              fontWeight: FontWeight.w400
-                                          ),),
-                                        SizedBox(height: 2,),
-                                        Text("Billion Dreams",
-                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 2,
+                                          ),
+                                          Text(
+                                            "Billion Dreams",
+                                            style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400
-                                          ),)
-                                      ],
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
@@ -289,17 +505,22 @@ class HOOmeState extends State<HOOme> {
                   ],
                 ),
               ),
-              SizedBox(height: 25,),
+              SizedBox(
+                height: 25,
+              ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0,left: 16),
-                child: Text("Recomended for Today",
+                padding: const EdgeInsets.only(top: 8.0, left: 16),
+                child: Text(
+                  "Recomended for Today",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
-                      fontWeight: FontWeight.w800
-                  ),),
+                      fontWeight: FontWeight.w800),
+                ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               SizedBox(
                 height: 250,
                 child: ListView.builder(
@@ -307,7 +528,7 @@ class HOOmeState extends State<HOOme> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       return Recomended(
                         imgurl: recs[index].imageUrl,
                         songname: recs[index].title,
@@ -316,15 +537,18 @@ class HOOmeState extends State<HOOme> {
                     }),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0,left: 16),
-                child: Text("Made For You",
+                padding: const EdgeInsets.only(top: 8.0, left: 16),
+                child: Text(
+                  "Made For You",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
-                      fontWeight: FontWeight.w800
-                  ),),
+                      fontWeight: FontWeight.w800),
+                ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               SizedBox(
                 height: 250,
                 child: ListView.builder(
@@ -332,7 +556,7 @@ class HOOmeState extends State<HOOme> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       return Recomended(
                         imgurl: mads[index].imageUrl,
                         songname: mads[index].title,
@@ -341,15 +565,18 @@ class HOOmeState extends State<HOOme> {
                     }),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8.0,left: 16),
-                child: Text("Made For You",
+                padding: const EdgeInsets.only(top: 8.0, left: 16),
+                child: Text(
+                  "Made For You",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
-                      fontWeight: FontWeight.w800
-                  ),),
+                      fontWeight: FontWeight.w800),
+                ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               SizedBox(
                 height: 250,
                 child: ListView.builder(
@@ -357,7 +584,7 @@ class HOOmeState extends State<HOOme> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       return Recomended(
                         imgurl: mads[index].imageUrl,
                         songname: mads[index].title,
@@ -374,12 +601,12 @@ class HOOmeState extends State<HOOme> {
 }
 
 class Recomended extends StatelessWidget {
-
   final String imgurl;
   final String songname;
   final String songauthor;
 
-  const Recomended({required this.imgurl, required this.songname, required this.songauthor});
+  const Recomended(
+      {required this.imgurl, required this.songname, required this.songauthor});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -393,37 +620,40 @@ class Recomended extends StatelessWidget {
           SizedBox(
             height: 160,
             width: MediaQuery.of(context).size.width,
-            child: Image.asset(imgurl,fit: BoxFit.fill,),
+            child: Image.asset(
+              imgurl,
+              fit: BoxFit.fill,
+            ),
           ),
-          Text(songname,
+          Text(
+            songname,
             style: TextStyle(
                 color: Colors.white,
                 fontStyle: FontStyle.italic,
                 fontSize: 16,
-                fontWeight: FontWeight.bold
-            ),
+                fontWeight: FontWeight.bold),
           ),
-          Text(songauthor,
+          Text(
+            songauthor,
             style: TextStyle(
                 color: Colors.white70,
                 fontStyle: FontStyle.italic,
                 fontSize: 14,
-                fontWeight: FontWeight.w500
-            ),)
+                fontWeight: FontWeight.w500),
+          )
         ],
       ),
     );
   }
 }
 
-
 class Madeforu extends StatelessWidget {
-
   final String imgurl;
   final String songname;
   final String songauthor;
 
-  const Madeforu({required this.imgurl, required this.songname, required this.songauthor});
+  const Madeforu(
+      {required this.imgurl, required this.songname, required this.songauthor});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -437,23 +667,27 @@ class Madeforu extends StatelessWidget {
           SizedBox(
             height: 160,
             width: MediaQuery.of(context).size.width,
-            child: Image.asset(imgurl,fit: BoxFit.fill,),
+            child: Image.asset(
+              imgurl,
+              fit: BoxFit.fill,
+            ),
           ),
-          Text(songname,
+          Text(
+            songname,
             style: TextStyle(
                 color: Colors.white,
                 fontStyle: FontStyle.italic,
                 fontSize: 16,
-                fontWeight: FontWeight.bold
-            ),
+                fontWeight: FontWeight.bold),
           ),
-          Text(songauthor,
+          Text(
+            songauthor,
             style: TextStyle(
                 color: Colors.white70,
                 fontStyle: FontStyle.italic,
                 fontSize: 14,
-                fontWeight: FontWeight.w500
-            ),)
+                fontWeight: FontWeight.w500),
+          )
         ],
       ),
     );
