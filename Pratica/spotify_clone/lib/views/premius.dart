@@ -11,29 +11,52 @@ class PremiumState extends State<Premium> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
+      body: ListView(
         children: [
-          Container(
-            height: 200,
-            width: 500,
-            margin: EdgeInsets.only(left: 50,right: 50,top: 85),
-            child: Text("Get more out of your music with Premium",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
+          Padding(
+            padding: const EdgeInsets.only(top: 85, left: 25, right: 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Get more out of your music with Premium",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Ad-Free Music, Offline Playback, Unlimited Skips and more!",
+                  style: TextStyle(
+                    color: Colors.white54,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
+          SizedBox(height: 40),
           simp(),
-          SizedBox(height: 25,),
+          SizedBox(height: 30),
           Container(
-            height:50 ,
+            height: 50,
             width: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: Colors.white
+              gradient: LinearGradient(
+                colors: [Colors.greenAccent, Colors.blueAccent],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
+                ),
+              ],
             ),
             alignment: Alignment.center,
             child: Text(
@@ -42,19 +65,29 @@ class PremiumState extends State<Premium> {
                 color: Colors.black,
                 fontWeight: FontWeight.w900,
                 fontSize: 20,
-                letterSpacing: 2
+                letterSpacing: 2,
               ),
             ),
           ),
-          SizedBox(height: 10,),
-          Text("Terms And Condition Apply",style: TextStyle(color: Colors.white,fontSize: 15),),
-          SizedBox(height: 52,),
+          SizedBox(height: 10),
+          Text(
+            "Terms and Conditions Apply",
+            style: TextStyle(color: Colors.white54, fontSize: 14),
+          ),
+          SizedBox(height: 52),
           Container(
             height: 70,
             width: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.white54
+              color: Colors.white24,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
+                ),
+              ],
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,24 +95,25 @@ class PremiumState extends State<Premium> {
                 Text(
                   "Spotify Free",
                   style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 25,
-                      letterSpacing:1
+                    color: Colors.white, // Alterado para branco
+                    fontWeight: FontWeight.w900,
+                    fontSize: 25,
+                    letterSpacing: 1,
                   ),
                 ),
                 Text(
                   "Current Plan",
                   style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 18,
-                      letterSpacing: 1
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 18,
+                    letterSpacing: 1,
                   ),
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 50),
         ],
       ),
     );
@@ -87,59 +121,103 @@ class PremiumState extends State<Premium> {
 
   CarouselSlider simp() {
     return CarouselSlider(
-          options: CarouselOptions(
-              height: 150.0,
-              initialPage: 0,
-            enableInfiniteScroll: false,
-          ),
-          items: ["Add Breaks","Streaming only","Listne Alone"].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return SizedBox(
-                  height: 150,
-                  width: 300,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: Container(
-                            color: Colors.white54,
-                            child: Column(
-                              children: [
-                                SizedBox(height: 5,),
-                                Text("Free",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w500),),
-                                SizedBox(height: 42),
-                                Text(i,style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500
-                                ),)
-                              ],
-                            ),
-                          )
+      options: CarouselOptions(
+        height: 150.0,
+        initialPage: 0,
+        enableInfiniteScroll: false,
+      ),
+      items: ["Ad Breaks", "Streaming Only", "Listen Alone"].map((i) {
+        return Builder(
+          builder: (BuildContext context) {
+            return SizedBox(
+              height: 150,
+              width: 300,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      Expanded(
-                          child: Container(
-                            color: Colors.greenAccent[200],
-                            child: Column(
-                              children: [
-                                SizedBox(height: 5,),
-                                Text("Premium",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w500),),
-                                SizedBox(height: 42),
-                                Text("Ad-Free Music",style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500
-                                ),)
-                              ],
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Free",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
                             ),
-                          )
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            i,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                );
-              },
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.greenAccent[200],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Premium",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            _getPremiumBenefit(i),
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             );
-          }).toList(),
+          },
         );
+      }).toList(),
+    );
+  }
+
+  String _getPremiumBenefit(String freeFeature) {
+    switch (freeFeature) {
+      case "Ad Breaks":
+        return "Ad-Free Music";
+      case "Streaming Only":
+        return "Offline Playback";
+      case "Listen Alone":
+        return "Group Sessions";
+      default:
+        return "Premium Feature";
+    }
   }
 }

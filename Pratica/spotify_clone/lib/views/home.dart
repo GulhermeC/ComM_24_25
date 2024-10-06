@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'album_page.dart';
 import '../details.dart';
 import '../song_model.dart';
 
@@ -53,8 +54,7 @@ class HOOmeState extends State<HOOme> {
                           color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.w600),
-                      overflow:
-                          TextOverflow.ellipsis, // Ensure no overflow of text
+                      overflow: TextOverflow.ellipsis, // Avoid text overflow
                     ),
                   ),
                   SizedBox(
@@ -79,7 +79,7 @@ class HOOmeState extends State<HOOme> {
                 height: 5,
               ),
               Container(
-                height: 300,
+                height: 270,
                 color: Colors.transparent,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -97,18 +97,15 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white30,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Rounded corners added here
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded corners for the left side of the image
+                                      topLeft: Radius.circular(15),
                                       bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
@@ -132,7 +129,7 @@ class HOOmeState extends State<HOOme> {
                                         "Liked Songs",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w400),
                                         overflow: TextOverflow
                                             .ellipsis, // Avoid overflow text
@@ -149,20 +146,16 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white30,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Only round the left side
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded top left corner for image
-                                      bottomLeft: Radius.circular(
-                                          15), // Rounded bottom left corner for image
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
                                       alignment: Alignment.center,
@@ -180,13 +173,21 @@ class HOOmeState extends State<HOOme> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 8.0),
-                                    child: Text(
-                                      "Kaathadi",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                      ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Plastic Beach",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
@@ -206,26 +207,21 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white30,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Only round the left side
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded top left corner for image
-                                      bottomLeft: Radius.circular(
-                                          15), // Rounded bottom left corner for image
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: MediaQuery.of(context)
-                                          .size
-                                          .height, // Keep the height consistent
+                                      height:
+                                          MediaQuery.of(context).size.height,
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
@@ -233,7 +229,7 @@ class HOOmeState extends State<HOOme> {
                                         fit: BoxFit.fill,
                                         height:
                                             MediaQuery.of(context).size.height /
-                                                10, // Adjust as needed
+                                                10,
                                         width:
                                             MediaQuery.of(context).size.width /
                                                 6,
@@ -249,18 +245,10 @@ class HOOmeState extends State<HOOme> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Kolywood",
+                                          "Meteora",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        Text(
-                                          "cream",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -277,35 +265,29 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white30,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Only round the left side
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded top left corner for image
-                                      bottomLeft: Radius.circular(
-                                          15), // Rounded bottom left corner for image
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: MediaQuery.of(context)
-                                          .size
-                                          .height, // Keep the height consistent
+                                      height:
+                                          MediaQuery.of(context).size.height,
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
                                         "assets/enjoy.jfif",
                                         fit: BoxFit.fill,
-                                        height: MediaQuery.of(context)
-                                                .size
-                                                .height /
-                                            10, // Adjusted height for consistency
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                10,
                                         width:
                                             MediaQuery.of(context).size.width /
                                                 6,
@@ -321,18 +303,18 @@ class HOOmeState extends State<HOOme> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Enjoy",
+                                          "Master of",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
                                         Text(
-                                          "Enjami",
+                                          "Puppets",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -356,35 +338,29 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white38,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Only round the left side
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded top left corner for image
-                                      bottomLeft: Radius.circular(
-                                          15), // Rounded bottom left corner for image
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: MediaQuery.of(context)
-                                          .size
-                                          .height, // Keep the height consistent
+                                      height:
+                                          MediaQuery.of(context).size.height,
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
                                         "assets/inna.jpg",
                                         fit: BoxFit.fill,
-                                        height: MediaQuery.of(context)
-                                                .size
-                                                .height /
-                                            10, // Adjusted height for consistency
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                10,
                                         width:
                                             MediaQuery.of(context).size.width /
                                                 6,
@@ -400,18 +376,10 @@ class HOOmeState extends State<HOOme> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Lift",
+                                          "Madvillainy",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Song",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -428,35 +396,29 @@ class HOOmeState extends State<HOOme> {
                               decoration: BoxDecoration(
                                 color: Colors.white38,
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(
-                                      15), // Rounded top left corner
-                                  bottomLeft: Radius.circular(
-                                      15), // Rounded bottom left corner
-                                ), // Only round the left side
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15),
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(
-                                          15), // Rounded top left corner for image
-                                      bottomLeft: Radius.circular(
-                                          15), // Rounded bottom left corner for image
+                                      topLeft: Radius.circular(15),
+                                      bottomLeft: Radius.circular(15),
                                     ),
                                     child: Container(
                                       alignment: Alignment.center,
-                                      height: MediaQuery.of(context)
-                                          .size
-                                          .height, // Keep the height consistent
+                                      height:
+                                          MediaQuery.of(context).size.height,
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
                                         "assets/sach.jfif",
                                         fit: BoxFit.fill,
-                                        height: MediaQuery.of(context)
-                                                .size
-                                                .height /
-                                            10, // Adjusted height for consistency
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                10,
                                         width:
                                             MediaQuery.of(context).size.width /
                                                 6,
@@ -473,21 +435,10 @@ class HOOmeState extends State<HOOme> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            "Sachin - A",
+                                            "Demon Days",
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 2,
-                                          ),
-                                          Text(
-                                            "Billion Dreams",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
@@ -529,10 +480,26 @@ class HOOmeState extends State<HOOme> {
                     scrollDirection: Axis.horizontal,
                     physics: ClampingScrollPhysics(),
                     itemBuilder: (context, index) {
-                      return Recomended(
-                        imgurl: recs[index].imageUrl,
-                        songname: recs[index].title,
-                        songauthor: recs[index].artist,
+                      return GestureDetector(
+                        onTap: index == 0
+                            ? () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AlbumPage(
+                                      albumImageUrl: recs[index].imageUrl,
+                                      albumTitle: recs[index].title,
+                                      albumArtist: recs[index].artist,
+                                    ),
+                                  ),
+                                );
+                              }
+                            : null, // O primeiro item será clicável
+                        child: Recomended(
+                          imgurl: recs[index].imageUrl,
+                          songname: recs[index].title,
+                          songauthor: recs[index].artist,
+                        ),
                       );
                     }),
               ),
