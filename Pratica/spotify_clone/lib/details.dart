@@ -5,9 +5,9 @@ List<Song> getRecommended() {
 
   //1
   recs.add(Song(
-    imageUrl: "assets/sobaby.jfif",
-    artist: "Anirudh Ravichandran",
-    title: "So Baby  -  From Doctor",
+    imageUrl: "assets/livingthings.jpg",
+    artist: "Linking Park",
+    title: "Living Things",
   ));
 
   //2

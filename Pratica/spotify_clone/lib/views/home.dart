@@ -164,7 +164,7 @@ class HOOmeState extends State<HOOme> {
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
-                                        "assets/kathadi.jpg",
+                                        "assets/beach.jpg",
                                         fit: BoxFit.fill,
                                         height: 100,
                                         width: 100,
@@ -225,7 +225,7 @@ class HOOmeState extends State<HOOme> {
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
-                                        "assets/kolywood.jfif",
+                                        "assets/meteora.jpg",
                                         fit: BoxFit.fill,
                                         height:
                                             MediaQuery.of(context).size.height /
@@ -283,7 +283,7 @@ class HOOmeState extends State<HOOme> {
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
-                                        "assets/enjoy.jfif",
+                                        "assets/masterofpuppets.jpg",
                                         fit: BoxFit.fill,
                                         height:
                                             MediaQuery.of(context).size.height /
@@ -356,7 +356,7 @@ class HOOmeState extends State<HOOme> {
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
-                                        "assets/inna.jpg",
+                                        "assets/madvillainy.jpg",
                                         fit: BoxFit.fill,
                                         height:
                                             MediaQuery.of(context).size.height /
@@ -414,7 +414,7 @@ class HOOmeState extends State<HOOme> {
                                       width:
                                           MediaQuery.of(context).size.width / 6,
                                       child: Image.asset(
-                                        "assets/sach.jfif",
+                                        "assets/demondays.jpg",
                                         fit: BoxFit.fill,
                                         height:
                                             MediaQuery.of(context).size.height /

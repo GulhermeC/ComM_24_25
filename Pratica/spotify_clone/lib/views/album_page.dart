@@ -17,6 +17,21 @@ class AlbumPage extends StatefulWidget {
 }
 
 class AlbumPageState extends State<AlbumPage> {
+  final List<Map<String, String>> tracks = [
+    {"title": "Lost in the Echo", "duration": "3:25"},
+    {"title": "In My Remains", "duration": "3:21"},
+    {"title": "Burn It Down", "duration": "3:50"},
+    {"title": "Lies Greed Misery", "duration": "2:27"},
+    {"title": "I'll Be Gone", "duration": "3:31"},
+    {"title": "Castle of Glass", "duration": "3:25"},
+    {"title": "Victimized", "duration": "1:51"},
+    {"title": "Roads Untraveled", "duration": "3:50"},
+    {"title": "Skin to Bone", "duration": "2:48"},
+    {"title": "Until It Breaks", "duration": "3:43"},
+    {"title": "Tinfoil", "duration": "1:12"},
+    {"title": "Powerless", "duration": "3:44"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,7 +142,7 @@ class AlbumPageState extends State<AlbumPage> {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "8 tracks, 32 minutes",
+                          "12 tracks, 37 minutes",
                           style: TextStyle(
                             color: Colors.white54,
                             fontSize: 14,
@@ -171,9 +186,9 @@ class AlbumPageState extends State<AlbumPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Slidable(
-                      key: const ValueKey(0),
+                  children: tracks.map((track) {
+                    return Slidable(
+                      key: ValueKey(track["title"]),
                       endActionPane: ActionPane(
                         motion: const StretchMotion(),
                         children: [
@@ -193,204 +208,13 @@ class AlbumPageState extends State<AlbumPage> {
                       ),
                       child: ListTile(
                         leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 1",
+                        title: Text(track["title"]!,
                             style: TextStyle(color: Colors.white)),
-                        subtitle: Text("3:45",
+                        subtitle: Text(track["duration"]!,
                             style: TextStyle(color: Colors.white54)),
                       ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(1),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor:
-                                Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor:
-                                Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 2",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("4:05",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(2),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 3",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("3:15",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(3),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 4",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("4:00",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(4),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 5",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("5:10",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(5),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 6",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("3:50",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(6),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 7",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("4:25",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                    Slidable(
-                      key: const ValueKey(7),
-                      endActionPane: ActionPane(
-                        motion: const StretchMotion(),
-                        children: [
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.green.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.download,
-                          ),
-                          SlidableAction(
-                            onPressed: (context) {},
-                            backgroundColor: Colors.red.shade900,
-                            foregroundColor: Colors.white,
-                            icon: Icons.favorite_border,
-                          ),
-                        ],
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.music_note, color: Colors.white),
-                        title: Text("Track 8",
-                            style: TextStyle(color: Colors.white)),
-                        subtitle: Text("3:35",
-                            style: TextStyle(color: Colors.white54)),
-                      ),
-                    ),
-                  ],
+                    );
+                  }).toList(),
                 ),
               ),
             ],
