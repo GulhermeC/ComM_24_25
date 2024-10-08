@@ -41,7 +41,7 @@ class LibraryState extends State<Library> with SingleTickerProviderStateMixin {
                     backgroundColor: Colors.blueAccent,
                     child: Center(
                       child: Text(
-                        "N",
+                        "G",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -108,9 +108,9 @@ class LibraryState extends State<Library> with SingleTickerProviderStateMixin {
           buildRecentlyPlayed(),
           SizedBox(height: 15),
           buildTileList([
-            tile("Liked Songs", "assets/like.jfif", "Playlist 52 Songs"),
-            tile("On Repeat", "assets/onrepeat.jfif", "Playlist for u"),
-            tile("Malayalam", "assets/ser6.jfif", "Malayalam List"),
+            tile("Liked Songs", "assets/like.jfif", "Playlist - 52 Songs"),
+            tile("On Repeat", "assets/onrepeat.jfif", "Playlist made for you"),
+            tile("Malayalam", "assets/ser6.jfif", "Playlist"),
             tile("Weekly Discover", "assets/weekly.jfif", "Weekly discover"),
           ]), // List of tiles (as before)
         ],
@@ -126,9 +126,9 @@ class LibraryState extends State<Library> with SingleTickerProviderStateMixin {
           buildRecentlyPlayed(),
           SizedBox(height: 15),
           buildTileList([
-            tile("Jazz Classics", "assets/jazz.jfif", "The Best of Jazz"),
-            tile("Pop Hits", "assets/pop.jfif", "Trending Pop Music"),
-            tile("Classical Essentials", "assets/classical.jfif", "Classical Hits"),
+            tile("Kendrick Lamar", "assets/klamar.jpeg", "Hip-hop"),
+            tile("Linkin Park", "assets/linkin.jpeg", "Alternative rock"),
+            tile("MFDoom", "assets/mfdoom.jpeg", "Hip-hop"),
           ]), // Moved some tiles to "Artist" tab
         ],
       ),

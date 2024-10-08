@@ -11,11 +11,13 @@ class HOOme extends StatefulWidget {
 class HOOmeState extends State<HOOme> {
   List<Song> recs = [];
   List<Song> mads = [];
+  List<Song> dailyMixes = [];
 
   @override
   void initState() {
     recs = getRecommended();
     mads = getMade();
+    dailyMixes = getDailyMixes();
     super.initState();
   }
 
@@ -534,7 +536,7 @@ class HOOmeState extends State<HOOme> {
               Padding(
                 padding: const EdgeInsets.only(top: 8.0, left: 16),
                 child: Text(
-                  "Made For You",
+                  "Daily Mixes",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
@@ -547,15 +549,15 @@ class HOOmeState extends State<HOOme> {
               SizedBox(
                 height: 250,
                 child: ListView.builder(
-                    itemCount: mads.length,
+                    itemCount: dailyMixes.length,
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: ClampingScrollPhysics(),
                     itemBuilder: (context, index) {
                       return Recomended(
-                        imgurl: mads[index].imageUrl,
-                        songname: mads[index].title,
-                        songauthor: mads[index].artist,
+                        imgurl: dailyMixes[index].imageUrl,
+                        songname: dailyMixes[index].title,
+                        songauthor: dailyMixes[index].artist,
                       );
                     }),
               ),

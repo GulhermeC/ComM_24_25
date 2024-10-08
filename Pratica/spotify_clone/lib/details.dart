@@ -12,87 +12,92 @@ List<Song> getRecommended() {
 
   //2
   recs.add(Song(
-    imageUrl: "assets/satho.jfif",
-    artist: "Arijit Singh",
-    title: "Agar tum Sath Ho",
+    imageUrl: "assets/samstown.jpeg",
+    artist: "The Killers",
+    title: "Sam's Town",
   ));
 
   //3
   recs.add(Song(
-    imageUrl: "assets/stero.jfif",
-    artist: "Gym Class Heroes",
-    title: "My Heart is Stereo",
+    imageUrl: "assets/demondays.jpg",
+    artist: "Gorillaz",
+    title: "Demon Days",
   ));
 
   //4
   recs.add(Song(
-    imageUrl: "assets/sulthan.jfif",
-    artist: "Vivek-Mervin",
-    title: "Jai Sulthan - from Sulthan",
+    imageUrl: "assets/rstein.jpeg",
+    artist: "Rammstein",
+    title: "Rammstein",
   ));
 
   //5
   recs.add(Song(
-    imageUrl: "assets/zaalima.jfif",
-    artist: "Arijit Singh",
-    title: "Zaalima - from Raees",
+    imageUrl: "assets/fotd.jpeg",
+    artist: "Iron Maiden",
+    title: "Fear of the Dark",
   ));
 
   //6
   recs.add(Song(
-    imageUrl: "assets/kathadi1.jpg",
-    artist: "Hari Mahadevan",
-    title: "So Baby  -  From Doctor",
+    imageUrl: "assets/turnstile.jpg",
+    artist: "Turnstile",
+    title: "GLOW ON",
   ));
 
   return recs;
 }
 
-List<Song> getMade(){
-
+List<Song> getMade() {
   List<Song> mads = [];
 
   //1
   mads.add(Song(
     imageUrl: "assets/weekly.jfif",
-    artist: "Weekly Discover",
-    title: "Songs Based on ur playList",
+    artist: "Your weekly mixtape of fresh music",
+    title: "Discover Weekly",
   ));
 
   //2
-  mads.add(Song(
-    imageUrl: "assets/mix.jfif",
-    artist: "Your daily Mix 3",
-    title: "New Songs",
-  ));
-
-  //3
   mads.add(Song(
     imageUrl: "assets/onrepeat.jfif",
     artist: "On Repeat",
     title: "Good Music",
   ));
 
-  //4
+  //3
   mads.add(Song(
     imageUrl: "assets/top.jfif",
-    artist: "On Repeat",
-    title: "Infinite Music",
-  ));
-
-  //5
-  mads.add(Song(
-    imageUrl: "assets/mix.jfif",
-    artist: "Daily Mix3",
-    title: "Good Mood",
-  ));
-
-  //1
-  mads.add(Song(
-    imageUrl: "assets/top.jfif",
-    artist: "New Hits",
-    title: "Your Top 20 Musics",
+    artist: "Infinite Music",
+    title: "Your Top Songs",
   ));
 
   return mads;
+}
+
+List<Song> getDailyMixes() {
+  List<Song> dailyMixes = [];
+
+  //1
+  dailyMixes.add(Song(
+    imageUrl: "assets/mix.jfif",
+    artist: "Based on your preferences",
+    title: "Daily Mix 3",
+  ));
+
+  //2
+  dailyMixes.add(Song(
+    imageUrl: "assets/dailymix5.jpg",
+    artist: "Based on your preferences",
+    title: "Daily Mix 5",
+  ));
+
+  //3
+  dailyMixes.add(Song(
+    imageUrl: "assets/dailymix6.jpg",
+    artist: "Based on your preferences",
+    title: "Daily Mix 6",
+  ));
+
+  return dailyMixes;
 }
