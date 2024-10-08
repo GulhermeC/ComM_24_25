@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'album_page.dart';
 import '../details.dart';
 import '../song_model.dart';
+import 'settings.dart';
 
 class HOOme extends StatefulWidget {
   @override
@@ -70,11 +71,19 @@ class HOOmeState extends State<HOOme> {
                   SizedBox(
                     width: 20,
                   ),
-                  Icon(
-                    Icons.settings,
-                    size: 35,
-                    color: Colors.white,
-                  ),
+                  IconButton(
+                    icon: Icon(
+                      Icons.settings,
+                      size: 35,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SettingsPage()),
+                      );
+                    },
+                  )
                 ],
               ),
               SizedBox(
