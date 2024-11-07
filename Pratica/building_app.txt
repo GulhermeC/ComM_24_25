@@ -1,0 +1,29 @@
+Building an app
+
+Define requirements
+
+Create project
+
+Understand before coding
+
+Data layer 				
+- Structure
+	- API Connection
+	- API Model
+- Datasource
+	- Connectinon to api
+	- use retrofit to simplify api calls
+
+
+Business Layer
+
+- Repository
+	- Interface to Data Layer to fetch information
+	- we dont want to depend on data layer, we need to invert this dependency using an interface
+	
+Presentation layer
+- Structure
+- Use MVP as the base structure for each screen or feature
+- Separation of concerns
+	- Controlling the UI - presenter
+	- Showing the UI - activity
